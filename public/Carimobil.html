@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <script src="assets/js/bootstrap.js"></script> 
+    <title>Document</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg" style="background-color:#F1F3FF">
+        <div class="container">
+          <a class="navbar-brand" href="#"><img src="assets/images/Rectangle.png"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item mx-3">
+                <a class="nav-link" href="#">Our Services</a>
+              </li>
+              <li class="nav-item mx-3">
+                <a class="nav-link" href="#">Why Us</a>
+              </li>
+              <li class="nav-item mx-3">
+                <a class="nav-link" href="#">Testimonial</a>
+              </li>
+              <li class="nav-item mx-3">
+                <a class="nav-link" href="#">FAQ</a>
+              </li>
+              <li class="nav-item mx-3">
+                <a class="btn btn-success" href="#">Register</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+    </nav>
+    <section id="hero_section" style="background-color:#F1F3FF">
+        <div class="container pt-3">
+            <div class="row">
+                <div class="col-md-6 align-self-center">
+                    <h1 class="fs-2 fw-bold ">Sewa & Rental Mobil Terbaik di kacawasan (Lokasimu)</h1>
+                    <p class="fs-6 pt-" >Selamat datang di Binar Car Rental. Kami menyediakan mobil kualitas terbaik dengan harga terjangkau. Selalu siap melayani kebutuhanmu untuk sewa mobil selama 24 jam.</p>
+                    
+                </div>
+                <div class="col-md-6 ">
+                    <img src="assets/images/img_car.png" class="img-fluid" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="carimobil">
+        <div class="container ">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 mt">
+                <div class="col-md-1 ">
+                </div>
+                <div class="col-md-10 ">
+                    <div class="card px-4 py-4 ">
+                        <div class="row g-3 ">
+                            <div class="col-md-3">
+                                <label for="exampleFormControlInput1" class="form-label">Tipe Driver</label>
+                                <select name="typesewa" class="form-select">
+                                    <option selected>Pilih Tipe Driver</option>
+                                    <option value="Dengan Supir">Dengan Supir</option>
+                                    <option value="Lepas Kunci">Tanpa Supir (lepas Kunci)</option>
+                                </select>
+                                
+                            </div>
+                            <div class="col-md-2">
+                                <label for="exampleFormControlInput1" class="form-label">Tanggal</label>
+                                <input id="date" class="form-control" type="date" />
+                                <span id="startDateSelected"></span>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="exampleFormControlInput1" class="form-label">Waktu Jemput Mobil</label>
+                                <input id="time" class="form-control" type="time" placeholder="" />
+                                <span id="timeSelected"></span>
+                            </div>
+                            <div class="col-md-3">
+                                <label for="exampleFormControlInput1" class="form-label">Jumlah Penumpang (optional)</label>
+                                <input type="number" class="form-control" placeholder="Jumlah Penumpang" name="capacity">
+                            </div>
+                           
+                            <div class="col-md-2">
+                                <label for="exampleFormControlInput1" class="form-label"></label>
+                                <div class="mt-2">
+                                    <button class="btn btn-success" type="button" id="search">Cari Mobil</button>
+                                    
+                                </div>  
+                               
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-1">
+                </div>
+ 
+  
+        </div>
+    </section>
+    <section id ="hasilcari">
+       <div class="container mt-5"><div id="app">
+
+    </div></div>
+    </section>
+   
+    <section id="footer">
+        <div class="container">
+            <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-4 pt-5 my-5">
+            <!-- <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5"> -->
+                <div class="col-md-3 align-items-center">
+                <p>Jalan Suroyo No. 161 Mayangan Kota Probolonggo 672000</p>
+                <p>binarcarrental@gmail.com</p>
+                <p>081-233-334-808</p>
+              </div>
+          
+              <div class="col-md-2 ">
+                <ul class="nav flex-column">
+                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-dark">Our services</a></li>
+                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-dark">Why Us</a></li>
+                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-dark">Testimonial</a></li>
+                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-dark">FAQ</a></li>
+                </ul>
+              </div>
+          
+              <div class="col-md-3 mb-3">
+                <p>Connect with us</p>
+                <ul class="nav">
+
+                  <li class="nav-item mb-2"><a href="#" class="nav-link p-1"><img src="assets/images/icon_facebook.png"></a></li>
+                  <li class="nav-item mb-2"><a href="#" class="nav-link p-1"><img src="assets/images/icon_instagram.png"></a></li>
+                  <li class="nav-item mb-2"><a href="#" class="nav-link p-1"><img src="assets/images/icon_twitter.png"></a></li>
+                  <li class="nav-item mb-2"><a href="#" class="nav-link p-1"><img src="assets/images/icon_mail.png"></a></li>
+                  <li class="nav-item mb-2"><a href="#" class="nav-link p-1"><img src="assets/images/icon_twitch.png"></a></li>
+                </ul>
+              </div>
+          
+              <div class="col mb-3">
+                <p>Copyright Binar 2022</p>
+                <img src="assets/images/Rectangle.png">
+                
+              </div>
+            </footer>
+          </div>
+    </section>
+
+
+    <script type="text/javascript" src="./scripts/render.js"></script>
+    
+    <script type="text/javascript" src="scripts/table.js"></script>
+    <script type="text/javascript" src="scripts/listcar.js"></script>
+    <script type="text/javascript" src="scripts/script.js"></script>
+</body>
+</html>
