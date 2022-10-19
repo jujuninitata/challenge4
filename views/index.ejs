@@ -1,0 +1,48 @@
+<%- include("./partial/navbar") -%>
+<%- include("./partial/sidebar") -%>
+<!--main content wrapper-->
+<div class="mcw container-fluid " style="background:#F4F5F7">
+    <ol class="breadcrumb " style="background:#F4F5F7">
+        <li class="breadcrumb-item" ><a href="#">Cars</a></li>
+        <li class="breadcrumb-item"><a href="#">Library</a></li>
+        <li class="breadcrumb-item ">Data</li>
+      </ol>
+      <ol class="breadcrumb" style="background:#F4F5F7">
+        <li class="breadcrumb-item" ><a href="/">Car</a></li>
+        <li class="breadcrumb-item active"><a href="#">List Car</a></li>
+      </ol>
+
+    <!--navigation here-->
+    <!--main content view-->
+    <div class="row">
+        <div class="col-md-10 py-6"><h1 class="align-self-center">      List Car</h1></div>
+        <div class="col-md-2">
+            <a href="tambah"><button class="btn align-self-center" >+ Add New Car</button></a></div>
+    </div>
+    <div class="row container-fluid">
+        <div class="col-md-12">
+            <table class="table table-stripped">
+                <tbody>
+                    <% data.forEach((item, index) => { %>
+                        <tr>
+                            <td><%= item.id %></td>
+                            <td><%= item.nama %></td>
+                            <td><%= item.size %></td>
+                            <td><%= item.harga %></td>
+                            <td><%= item.foto %></td>
+                            <td><a href="/ubah?id=<%=item.id%>">Update</td>
+                            <td><a href="/delete?id=<%=item.id%>">Delete</td>
+                        </tr><br/>
+                    <% }) %>
+        
+                </tbody>
+            </table>
+            
+      </div>
+    </div>
+  </div>
+
+
+
+
+<%- include("./partial/footer.ejs") -%>

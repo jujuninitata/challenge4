@@ -1,0 +1,100 @@
+<%- include("./partial/navbar") -%>
+<div class="mcw container-fluid " style="background:#F4F5F7">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#">Cars</a></li>
+        <li class="breadcrumb-item"><a href="#">Library</a></li>
+        <li class="breadcrumb-item ">Data</li>
+      </ol>
+      <ol class="breadcrumb" style="background:#F4F5F7">
+        <li class="breadcrumb-item"><a href="#">Car</a></li>
+        <li class="breadcrumb-item active"><a href="/">List Car</a></li>
+        
+        <li class="breadcrumb-item active"><a href="#">Add New Car</a></li>
+      </ol>
+
+    <!--navigation here-->
+    <!--main content view-->
+    <div class="row">
+        <div class="col-md-10 py-6"><h1 class="align-self-center">Add New Car</h1></div>
+        
+    </div>
+    <div class="row container-fluid">
+        <div class="col-md-12">
+            <div class="card col-lg-12" style="background:white">
+                <form>
+                    <table>
+                        <tr>
+                            <td>Nama</td>
+                            <td><input type="text" name="nama" id="nama" placeholder="Masukan Nama"></td>
+                        </tr>
+                        <tr>
+                            <td>Sewa Per Hari</td>
+                            <td><input type="number" name="harga" id="harga" placeholder="Rp. 0,-"></td>
+                        </tr>
+                        <tr>
+                            <td>Ukuran</td>
+                            <td><select name="" id="size">
+                                <option value="small">Small</option>
+                                <option value="gede">Big</option>
+                            </select></td>
+                        </tr>
+                        <tr>
+                            <td>Foto</td>
+                            <td>
+                                <input type="text" name="foto" id="foto" placeholder="Foto">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><button type="submit" name="btn" id="btn">Ubah data</button>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const inputName = document.getElementById("nama");
+    const inputSize = document.getElementById("size");
+    const inputHarga = document.getElementById("harga");
+    const inputfoto = document.getElementById("foto");
+    const btnSubmit = document.getElementById("btn");
+    const params = new Proxy(new URLSearchParams(window.location.search), {
+        get: (searchParams, prop) => searchParams.get(prop),
+    });
+    window.addEventListener("load", async() => {
+        const dataReq = await fetch (`/api/v1/cars/${params.id}`);
+        const {message, data} = await dataReq.json()
+        inputName.value = data.nama;
+        inputSize.value = data.size;
+        inputHarga.value =data.harga;
+        inputfoto.value = data.foto;
+    })
+
+    btnSubmit.addEventListener("click", async (event) =>
+    {
+        event.preventDefault();
+        const ubahdata = {
+                nama : inputName.value,
+                size : inputSize.value,
+                harga : inputHarga.value,
+                foto : inputfoto.value
+        }
+        const resupdate =await fetch(`api/v1/cars/${params.id}`, {
+            method : "PUT",
+            headers : {
+                "Content-Type" : "application/json"
+            },
+            body : JSON.stringify(ubahdata)
+        })
+        setTimeout(() => {
+            window.location ="/";
+        },1000)
+     })    
+
+  </script>
+
+
+<%- include("./partial/footer") -%>
